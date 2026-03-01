@@ -1,9 +1,12 @@
 import java.time.LocalDate;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
 
 public class expense {
     public int amount;
     public String category;
-    public java.time.LocalDate date;
+    public String date;
     public String description;
 
 
@@ -30,11 +33,11 @@ public class expense {
         this.description = description;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public String getDate() {
+        return this.date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }

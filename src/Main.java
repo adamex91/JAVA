@@ -10,12 +10,12 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         expense myObj = new expense();
+        Scanner scanner = new Scanner(System.in);
         //variable initialization
-        int x = 3;
-        ArrayList<String> expenses = new ArrayList<String>();
-
-        while (x > 0) {
-            Scanner scanner = new Scanner(System.in);
+        boolean stopFlag=false;
+        ArrayList<String> expenses = new ArrayList<>();
+        System.out.println("Press q to quit: ");
+        do{
             System.out.println("Amount: ");
             int userAmount = scanner.nextInt();
             myObj.setAmount(userAmount);
@@ -38,8 +38,11 @@ public class Main {
             expenses.add(myObj.category);
             expenses.add(myObj.date);
             expenses.add(myObj.description);
-            x = x - 1;
-        }
+            String userInput =scanner.next();
+            if (!userInput.equals("q")){
+                stopFlag=true;
+                }
+        }while (!stopFlag);
         for (String i : expenses) {
             System.out.println(i);
 

@@ -14,7 +14,6 @@ public class Main {
         //variable initialization
         boolean stopFlag=false;
         ArrayList<String> expenses = new ArrayList<>();
-        System.out.println("Press q to quit: ");
         do{
             System.out.println("Amount: ");
             int userAmount = scanner.nextInt();
@@ -38,11 +37,12 @@ public class Main {
             expenses.add(myObj.category);
             expenses.add(myObj.date);
             expenses.add(myObj.description);
+            System.out.println("Type q if you want to quit: ");
             String userInput =scanner.next();
-            if (!userInput.equals("q")){
+            if (userInput.equals("q")){
                 stopFlag=true;
                 }
-        }while (!stopFlag);
+        }while (stopFlag==false);
         for (String i : expenses) {
             System.out.println(i);
 
